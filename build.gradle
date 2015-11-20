@@ -25,7 +25,7 @@ task clean(type: Delete) {
 def getVersionName = { ->
     def stdout = new ByteArrayOutputStream()
     exec {
-        commandLine 'git', 'describe', '--tags'
+        commandLine 'git', 'describe', '--tags', '--always'
         standardOutput = stdout
     }
     println("****************************************")
