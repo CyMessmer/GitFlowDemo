@@ -21,3 +21,25 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+def getVersionName = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'describe', '--tags'
+        standardOutput = stdout
+    }
+    return stdout.toString().trim()
+}
+
+
+//project configuration
+project.ext.set("compileSDKInt", 23)
+project.ext.set("buildToolVersionString", "23.0.1")
+project.ext.set("targetSDKInt", 17)
+project.ext.set("minSDKInt", project.targetSDKInt)
+project.ext.set("JavaVersionInt", JavaVersion.VERSION_1_7)
+
+// App version number.
+project.ext.set("versionCodeInt", 2)
+project.ext.set("versionNameString", getVersionName())
+project.ext.set("applicationIDString", "com.example.cymessmer.gitflowdemo")
