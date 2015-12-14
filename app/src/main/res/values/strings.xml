@@ -2,7 +2,7 @@
     <string name="app_name">GitFlowDemo</string>
     <string name="action_settings">Settifdsangs</string>
 
-    <string name="test string">test fucking work string gonna working</string>
+    <string name="test string">hope it doesnt build for dev branch</string>
 
     <string name="demo">test string</string>
 </resources>
